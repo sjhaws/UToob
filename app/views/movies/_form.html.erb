@@ -1,0 +1,15 @@
+<%= form_for @movie do |f| %>
+  <%= f.label :title %><br />
+  <%= f.text_field :title, required: true, autofocus: true %>
+  <br />
+  <%= f.label :trailer %><br />
+  <%= f.text_field :trailer, required: true %>
+  <br />
+  <%= f.label :genre %><br />
+  <%= f.text_field :genre %>
+  <br />
+  <%= f.label :description %><br />
+  <%= f.text_field :description %>
+  <br />
+  <%= f.submit %>
+<% end %>
