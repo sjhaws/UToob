@@ -1,9 +1,8 @@
 <h3 class="ui header">Current Movies</h3>
 <br />
 
-<div class="ui container">
+<div class="ui grid">
   <% @movies.each do |list| %>
-
     <div class="ui card">
       <h4><%= list.title %></h4>
       <div class="embed-container">
@@ -12,5 +11,4 @@
       <%= link_to "#{list.title}" %>
     </div>
   <% end %>
-
 </div>

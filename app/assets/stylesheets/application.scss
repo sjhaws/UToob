@@ -14,3 +14,16 @@
  *= require_self
  */
 @import "semantic-ui";
+
+.ui.vertical.menu {
+  background: #f0f0f0 !important;
+  padding: .5em !important;
+}
+
+.ui.card {
+  margin: 1em !important;
+  padding: .5em !important;
+}
+.ui.card:first-child {
+  margin-top: atuo !important;
+}
