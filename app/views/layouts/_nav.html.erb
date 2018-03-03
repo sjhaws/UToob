@@ -1,5 +1,5 @@
 <nav class="ui left fixed vertical menu">
-  <h1><%= link_to "UToob", root_path %></h1>
+  <h1 class="ui red header"><%= link_to "UToob", root_path %></h1>
 
   <% if user_signed_in? %>
     <span>Welcome, <%= current_user.username %></span>
@@ -17,14 +17,7 @@
 <div class="item">
   <div class="header">Playlist</div>
     <div class="menu">
-      <%= link_to "Create New Playlist", new_user_playlist_path %>
-        <ul>
-        <% @playlist.each do |playlist| %>
-          <li>
-            <%= link_to playlist.name, edit_user_playlist_path(@user, playlist) %>
-          </li>
-          <% end %>
-        </ul>
+
     </div>
 </div>
 
