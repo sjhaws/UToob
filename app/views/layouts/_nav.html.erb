@@ -3,10 +3,13 @@
 
   <% if user_signed_in? %>
     <span>Welcome, <%= current_user.username %></span>
-    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+    <br>
     <%= link_to "Edit Account", edit_user_registration_path %>
+    <br>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
   <%else%>
     <%= link_to "Sign In", new_user_session_path %> &ensp;
+    <br>
     <%= link_to "Sign Up", new_user_registration_path %>
   <%end%>
 
@@ -14,8 +17,14 @@
 <div class="item">
   <div class="header">Playlist</div>
     <div class="menu">
-      <a class="item">1</a>
-      <a class="item">2</a>
+      <%= link_to "Create New Playlist", new_user_playlist_path %>
+        <ul>
+        <% @playlist.each do |playlist| %>
+          <li>
+            <%= link_to playlist.name, edit_user_playlist_path(@user, playlist) %>
+          </li>
+          <% end %>
+        </ul>
     </div>
 </div>
 

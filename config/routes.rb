@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   scope 'movies/:movie_id', as: 'movie' do
     resources :comments, only: [:new, :create, :edit, :update, :destroy]
   end
-  scope 'movies/:movie_id', as: 'movie' do
+  scope 'users/:user_id', as: 'user' do
     resources :playlists, only: [:new, :create, :edit, :update, :destroy]
   end
 
