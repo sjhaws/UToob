@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   }
 
   scope 'movies/:movie_id', as: 'movie' do
-    resources :comments, only: [:new, :create, :delete]
+    resources :comments, only: [:new, :create, :edit, :update, :destroy]
   end
 
 end

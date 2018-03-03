@@ -19,7 +19,11 @@
 <h5>Created</h5>
 <%= @movie.created_at %>
 <h5>Comments</h5>
-<%= link_to 'Add Comment', new_movie_comment_path(@movie) %>
-<% @movie.comments.each do |comment| %>
+<% if user_signed_in? %>
+  <%= link_to 'Add Comment', new_movie_comment_path(@movie) %>
+<% else %>
+  <%= link_to 'Sign in to add a comment', new_user_session_path %>
+<% end %>
+<% @movie.comments.reverse.each do |comment| %>
   <%= render 'comments/comment', { comment: comment }  %>
 <%end%>
