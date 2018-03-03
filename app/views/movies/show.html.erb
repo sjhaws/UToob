@@ -1,10 +1,9 @@
 
-<%= link_to 'Home', movies_path, :class => "ui purple button" %>
-
-<h1><%= @movie.title %></h1>
-<hr />
-<div class="embed-container">
-<iframe src="<%= @movie.trailer %>" frameborder="0" allowfullscreen></iframe>
+<div class="ui container">
+  <div class="embed-container">
+    <iframe src="<%= @movie.trailer %>" frameborder="0" allowfullscreen></iframe>
+  </div>
+  <h1 class="ui header"><%= @movie.title %></h1>
 </div>
 <br />
 <h5>Duration</h5>
@@ -26,6 +25,8 @@
 <% else %>
   <%= link_to 'Sign in to add a comment', new_user_session_path %>
 <% end %>
-<% @movie.comments.reverse.each do |comment| %>
-  <%= render 'comments/comment', { comment: comment }  %>
-<%end%>
+<div class="ui comments">
+  <% @movie.comments.reverse.each do |comment| %>
+    <%= render 'comments/comment', { comment: comment }  %>
+  <%end%>
+</ul>
