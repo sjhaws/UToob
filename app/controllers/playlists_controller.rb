@@ -19,10 +19,11 @@ class PlaylistsController < ApplicationController
       redirect_to user_playlists_path(@user, @playlist)
     else
       render :new
+    end
   end
 
   def new
-    @playlist = @user.playlist.new
+    @playlist = @user.playlists.new
   end
 
   def destroy

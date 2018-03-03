@@ -15,10 +15,25 @@
 
 </hr>
 <div class="item">
+
   <div class="header">Playlist</div>
     <div class="menu">
 
+  <%if user_signed_in?%>
+    <div class="header">Playlist</div>
+      <div class="menu">
+
+      <%= link_to "Create New Playlist", new_user_playlist_path(current_user) %>
+        <ul>
+        <% current_user.playlists.each do |playlist| %>
+          <li>
+            <%= link_to playlist.name, edit_user_playlist_path(current_user, playlist) %>
+          </li>
+          <% end %>
+        </ul>
+        <%else%>
     </div>
+  <%end%>
 </div>
 
 </nav>
