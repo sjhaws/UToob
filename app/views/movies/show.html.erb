@@ -1,2 +1,17 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<div>
+<%= link_to 'Home', movies_path %>
+</div>
+<h1><%= @movie.title %></h1>
+<hr />
+<%= @movie.trailer %>
+<br />
+<%= @movie.duration %>
+<br />
+<%= @movie.genre %>
+<br /> 
+<%= @movie.description %>
+<br />
+<%= @movie.updated_at %>
+<br />
+<%= @movie.created_at %>
+
