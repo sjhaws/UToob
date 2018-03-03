@@ -1,5 +1,3 @@
-#test
-
 Movie.create(
     title: 'The Dark Night',
     duration: '2hr 32min',
