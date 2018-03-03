@@ -3,18 +3,15 @@
 <iframe src="<%= @movie.trailer %>" frameborder="1" allowfullscreen></iframe>
 </div></div>
 <h1 class="title-position"><%= @movie.title %></h1>
-<br />
+<hr />
 <h3>Duration</h3>
 <%= @movie.duration %>
-<hr />
 <h3>Genre</h3>
 <%= @movie.genre %>
-<br /> 
-<a href="<%= @movie.description %>">IMDB Description</a>
-<hr />
+<h3>More about this Movie</h3>
+<a href="<%= @movie.description %>">IMDB Page</a>
 <h3>Last Updated</h3>
 <%= @movie.updated_at %>
-<hr />
 <h3>Created</h3>
 <%= @movie.created_at %>
 <h5>Comments</h5>
