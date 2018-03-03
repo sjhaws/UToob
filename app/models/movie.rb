@@ -1,4 +1,3 @@
 class Movie < ApplicationRecord
-  def date_conversion
-  end
+  belongs_to :playlist, optional: true
 end
