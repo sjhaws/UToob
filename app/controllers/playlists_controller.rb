@@ -16,7 +16,7 @@ class PlaylistsController < ApplicationController
     @playlist = @user.playlists.new(playlist_params)
 
     if @playlist.save
-      redirect_to user_playlists_path(@user, @playlist)
+      redirect_to root_path
     else
       render :new
     end
@@ -32,7 +32,7 @@ class PlaylistsController < ApplicationController
   
   def update
     if @playlist.update(playlist_params)
-      redirect_to update_user_playlist_path(@user, @playlist)
+      redirect_to root_path
     else
       render :edit
     end
