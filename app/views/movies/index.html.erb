@@ -4,7 +4,7 @@
 <div class="ui grid">
   <% @movies.each do |list| %>
     <div class="ui card">
-      <h4><%= link_to "#{list.title}" %></h4>
+      <h4><%= link_to "#{list.title}", movie_path(list.id) %></h4>
       <div class="embed-container">
       <iframe src="<%= list.trailer %>" frameborder="0" ></iframe>
       </div>
