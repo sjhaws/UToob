@@ -1,10 +1,22 @@
-<nav>
+<nav class="ui left fixed vertical menu">
+  <h1>UToob</h1>
+
   <% if user_signed_in? %>
     <span>Welcome, <%= current_user.username %></span>
     <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
     <%= link_to "Edit Account", destroy_user_session_path, method: :delete %>
   <%else%>
-    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Sign In", new_user_session_path %> &ensp;
     <%= link_to "Sign Up", new_user_registration_path %>
   <%end%>
+
+</hr>
+<div class="item">
+  <div class="header">Playlist</div>
+    <div class="menu">
+      <a class="item">1</a>
+      <a class="item">2</a>
+    </div>
+</div>
+
 </nav>
