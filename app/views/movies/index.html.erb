@@ -1,3 +1,16 @@
-<div class="twelve wide column">
-<p>Content will go here.</p>
+<h3 class="ui header">Current Movies</h3>
+<br />
+
+<div class="ui container">
+  <% @movies.each do |list| %>
+
+    <div class="ui card">
+      <h4><%= list.title %></h4>
+      <div class="embed-container">
+      <iframe src="<%= list.trailer %>" frameborder="0" ></iframe>
+      </div>
+      <%= link_to "#{list.title}" %>
+    </div>
+  <% end %>
+
 </div>
