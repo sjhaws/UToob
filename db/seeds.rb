@@ -268,10 +268,3 @@ Movie.create(
         description: ‘http://www.imdb.com/title/tt0117802/’,
         trailer: ‘https://www.youtube.com/embed/nWCct8XbQD0’
 )
-Movie.create(
-        title: Test,
-        duration: ‘1hr 36min’,
-        genre: ‘Drama’,
-        description: ‘http://www.imdb.com/title/tt0117802/’,
-        trailer: ‘https://www.youtube.com/embed/nWCct8XbQD0’
-)
