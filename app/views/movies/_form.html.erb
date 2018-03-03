@@ -1,15 +1,19 @@
-<%= form_for @movie do |f| %>
-  <%= f.label :title %><br />
-  <%= f.text_field :title, required: true, autofocus: true %>
-  <br />
-  <%= f.label :trailer %><br />
-  <%= f.text_field :trailer, required: true %>
-  <br />
-  <%= f.label :genre %><br />
+<%= form_for @movie do |f| :html => {:class => "ui form"} %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :trailer %>
+    <%= f.text_field :trailer, required: true %>
+  </div>
+  <div class="field">
+  <%= f.label :genre %>
   <%= f.text_field :genre %>
-  <br />
-  <%= f.label :description %><br />
-  <%= f.text_field :description %>
-  <br />
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+  </div>
   <%= f.submit %>
 <% end %>
