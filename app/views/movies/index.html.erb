@@ -1,2 +1,13 @@
-<h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<h2 class="ui grey header">Current Movies</h2>
+<br />
+
+<div class="ui grid">
+  <% @movies.each do |list| %>
+    <div class="ui card">
+      <h4><%= link_to "#{list.title}", movie_path(list.id) %></h4>
+      <div class="embed-container">
+      <iframe src="<%= list.trailer %>" frameborder="0" ></iframe>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,0 +1,39 @@
+<nav class="ui left fixed vertical menu">
+  <h1 class="ui red header"><%= link_to "UToob", root_path %></h1>
+
+  <% if user_signed_in? %>
+    <span>Welcome, <%= current_user.username %></span>
+    <br>
+    <%= link_to "Edit Account", edit_user_registration_path %>
+    <br>
+    <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+  <%else%>
+    <%= link_to "Sign In", new_user_session_path %> &ensp;
+    <br>
+    <%= link_to "Sign Up", new_user_registration_path %>
+  <%end%>
+
+</hr>
+<div class="item">
+
+  <div class="header"></div>
+    <div class="menu">
+
+  <%if user_signed_in?%>
+    <div class="header">Playlist</div>
+      <div class="menu">
+
+      <%= link_to "Create New Playlist", new_user_playlist_path(current_user) %>
+        <ul>
+        <% current_user.playlists.each do |playlist| %>
+          <li>
+            <%= link_to playlist.name, edit_user_playlist_path(current_user, playlist) %>
+          </li>
+          <% end %>
+        </ul>
+        <%else%>
+    </div>
+  <%end%>
+</div>
+
+</nav>

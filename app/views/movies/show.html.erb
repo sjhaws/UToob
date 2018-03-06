@@ -1,2 +1,27 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+
+<div style="width:80%"><div class="embed-container">
+<iframe src="<%= @movie.trailer %>" frameborder="1" allowfullscreen></iframe>
+</div></div>
+<h1 class="title-position"><%= @movie.title %></h1>
+<hr />
+<h3>Duration</h3>
+<%= @movie.duration %>
+<h3>Genre</h3>
+<%= @movie.genre %>
+<h3>More about this Movie</h3>
+<a href="<%= @movie.description %>">IMDB Page</a>
+<h3>Last Updated</h3>
+<%= @movie.updated_at %>
+<h3>Created</h3>
+<%= @movie.created_at %>
+<h5>Comments</h5>
+<% if user_signed_in? %>
+  <%= link_to 'Add Comment', new_movie_comment_path(@movie) %>
+<% else %>
+  <%= link_to 'Sign in to add a comment', new_user_session_path %>
+<% end %>
+<div class="ui comments">
+  <% @movie.comments.reverse.each do |comment| %>
+    <%= render 'comments/comment', { comment: comment }  %>
+  <%end%>
+</ul>

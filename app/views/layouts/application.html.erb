@@ -9,6 +9,13 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="ui grid">
+      <div class="three wide column">
+          <%= render 'layouts/nav' %>
+      </div>
+    <div class="thirteen wide column">
+        <%= yield %>
+    </div>
+  
   </body>
 </html>
